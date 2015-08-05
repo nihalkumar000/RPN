@@ -33,6 +33,33 @@ public class Calculator {
 			}
 		return number;
 	}
+	
+	
+public float unaryOperation(float number, String operand){	 
+	if(operand.equals("%"))
+		return (number/100);
+	return factorial(number);
+	
+}
+
+public float binaryOperation(float one, float two, String operand){
+	if(operand.equals("+"))
+ 		return(one+two);
+	else if(operand.equals("-"))
+		return (two-one);
+	else if(operand.equals("*"))
+		return (one*two);
+	else if (operand.equals("/")){
+		if( one == 0)
+			return Float.parseFloat("-999");
+		return (two/one);	
+		}
+	else if(operand.equals("^"))
+		 return (float)(Math.pow(two,one));
+	return Float.parseFloat("-999");
+}
+
+	
 	public float operation(Stack<Float> stack, String operand)
 	{
 		float one,two;
@@ -40,31 +67,17 @@ public class Calculator {
 		{
 			one=stack.pop();
 			if(isUnary(operand)){
-				if(operand.equals("%"))
-					return (one/100);
-				return factorial(one);
+				return unaryOperation(one,operand);
 			}
-			if (!stack.empty())
+			if (!stack.empty()) {
 				two=stack.pop();
-			else return Float.parseFloat("-999");
-		}
-		else return Float.parseFloat("-999");
-		
-		if(operand.equals("+"))
-     		return(one+two);
-		else if(operand.equals("-"))
-			return (two-one);
-		else if(operand.equals("*"))
-			return (one*two);
-		else if (operand.equals("/")){
-			if( one == 0)
-				return Float.parseFloat("-999");
-			return (two/one);	
+			 return binaryOperation(one,two,operand); 
 			}
-		else if(operand.equals("^"))
-			 return (float)(Math.pow(two,one));
-		return Float.parseFloat("-999");
-	}//gunction ends 		
+			
+		}
+		 return Float.parseFloat("-999");
+	}	
+		// function ends 		
     		
     		
     		
