@@ -17,7 +17,7 @@ public class TestCalculator extends TestCase{
 	public void testFirstExample()
 	{
 		Calculator calculator = new Calculator();
-		assertEquals(Float.parseFloat("-999"),calculator.eval("5 +"));
+		assertEquals(Float.parseFloat("26"),calculator.eval("3 ! 4 5 * +"));
 	}
 	
 	

@@ -10,4 +10,29 @@ Then system should display a message <result>
 
 Examples:
 | input1  | result |
-| "5 7 +" | "12" |
+| "1 2 3 + -" | "-4" |
+
+| input1  | result |
+| "6 2 * 3 /" | "4" |
+
+| input1  | result |
+| "2 3 ^ 4 5 + + " | "17" |
+
+| input1  | result |
+| "50 % 2 *" | "1" |
+
+| input1  | result |
+| "3 ! 4 5 * +" | "26" |
+
+| input1  | result |
+| "12 3 / !" | "24" |
+
+| input1  | result |
+| "5 1 2 + 4 * + 3 -" | "14" |
+
+
+
+
+
+
+

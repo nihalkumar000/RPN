@@ -7,7 +7,7 @@ public class Calculator {
 	
 	public boolean isOperator(String str){
 		if(str.equals("+") || str.equals("-") || str.equals("*") || str.equals("/") || str.equals("%") || 
-				str.equals("^") )
+				str.equals("^") || str.equals("!"))
 			return true;
 		return false;
 	}
@@ -20,18 +20,16 @@ public class Calculator {
 	}
 	
 	public float factorial(float number){
-		float result=number;
+		float result= 1 ; 
 		if(number < 0)
 			return Float.parseFloat("-999");
-		else if(number == 0){
+		 if(number == 0)
 			return 1;
-		} 
-		else
-			while(number!=1){
-				number--;
+			while(number!= 0){
 				result=result*number;
+				number--;
 			}
-		return number;
+		return result;
 	}
 	
 	
